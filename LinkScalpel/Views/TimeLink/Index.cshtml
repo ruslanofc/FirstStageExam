@@ -1,0 +1,14 @@
+﻿@model IEnumerable<TimeLink>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<a asp-area="" asp-controller="TimeLink" asp-action="Create">Create</a><br />
+
+@foreach (var link in Model)
+{
+    <a href="@link.Path">@link.Name</a><br />
+    <p>Remove at: @link.Time</p>
+}

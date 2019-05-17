@@ -1,0 +1,18 @@
+﻿@model IEnumerable<PassLink>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<a asp-area="" asp-controller="PassLink" asp-action="Create">Create</a><br />
+
+@foreach (var link in Model)
+{
+    <form method="post" asp-controller="PassLink" asp-action="Index" class="alert-dark">
+        <h2>@link.Name</h2>
+        <input type="hidden" value="@link.Id" name="id" />
+        <input type="password" value="" name="password" />
+        <input type="submit" value="Go" class="btn-default" />
+    </form>
+}
+

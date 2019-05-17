@@ -1,0 +1,26 @@
+﻿@model CountLink
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Create" asp-controller="CountLink">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <p>Empty for random generate</p>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Path" class="control-label">Path</label>
+        <input type="text" asp-for="Path" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Count" class="control-label">Count</label>
+        <input type="number" asp-for="Count" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Сохранить" class="btn btn-default" />
+    </div>
+</form>

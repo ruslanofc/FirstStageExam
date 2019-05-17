@@ -1,0 +1,20 @@
+﻿@model IEnumerable<CountLink>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<a asp-area="" asp-controller="CountLink" asp-action="Create">Create</a><br />
+
+@foreach (var link in Model)
+{
+    <form method="post" asp-controller="CountLink" asp-action="Index" class="alert-dark">
+        <p>@link.Name</p>
+        <p>counts:@link.Count</p>
+        <input type="hidden" value="@link.Id" name="id" />
+        <input type="hidden" value="@link.Path" name="path" />
+        <input type="hidden" value="@link.Count" name="count" />
+        <input type="submit" value="Go" class="btn-default" />
+    </form>
+    <br />
+}
